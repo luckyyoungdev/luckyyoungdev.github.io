@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+            <meta charset="utf-8">
+        <title>JS覆盖测试</title>
+    </head>
+
+    <body>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://rawgit.com/luckyyoungdev/luckyyoungdev.github.io/master/1.js"  type="text/javascript"></script>
+
+
+        <h1>Hello World</h1>
+
+
+        <button onclick="test()" style="width: 200px;height: 100px;size: 30px;">test</button>
+
+
+        <script>
+        
+        
+        
+            //加载并执行js文件：jquery.color.js
+            //并在成功后执行回调函数
+            $.getScript( "https://rawgit.com/luckyyoungdev/luckyyoungdev.github.io/master/2.js", function(data, textStatus, jqXHR){
+                // data 是该请求返回的数据(可能经过处理)
+                // textStatus 可能是"success"、 "notmodified"等
+                // jqXHR 是经过jQuery封装的XMLHttpRequest对象(保留其本身的所有属性和方法)
+                alert( "加载成功" );
+                // 这里假设加载的js文件中定义了函数renderUI()，这里即可执行
+            // $(function(){
+            //         alert(1);
+            //     });
+            } );
+                    
+        </script>
+
+
+    </body>
+</html>
